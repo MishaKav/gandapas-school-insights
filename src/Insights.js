@@ -16,7 +16,7 @@ export function Insights(props) {
     },
     {
       text: "Max characters",
-      value: maxBy(comments, "length").length
+      value: maxBy(comments, "length")?.length
     },
     {
       text: "More than 200 characters",

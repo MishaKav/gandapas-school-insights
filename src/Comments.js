@@ -4,13 +4,14 @@ import { List, Avatar, Typography } from "antd";
 const { Text } = Typography;
 
 export function Comments(props) {
-  const { comments = [] } = props;
+  const { isLoading, comments = [] } = props;
 
   return (
     <>
       <List
         bordered
         itemLayout="horizontal"
+        loading={isLoading}
         dataSource={comments}
         pagination
         renderItem={(c, i) => (
