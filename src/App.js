@@ -47,7 +47,7 @@ export default function App() {
     <Layout>
       <Header style={{ color: "white" }}>"Компас лидера. Путь к успеху"</Header>
 
-      <Content style={{ padding: 20, minHeight: "89vh" }}>
+      <Content style={{ padding: 10 }}>
         <Row>
           <Col>
             <Select
@@ -87,12 +87,12 @@ export default function App() {
 
         <Divider />
 
-        <Row justify="space-between">
-          <Col style={{ width: 300 }}>
+        <Row gutter={[20, 20]} justify="space-between">
+          <Col>
             <Insights comments={activeComments} />
           </Col>
 
-          <Col style={{ width: "calc(100% - 340px)" }}>
+          <Col>
             <Alert
               showIcon
               message={`Question ${activeQuestion.index}`}

@@ -17,9 +17,6 @@ export function Comments(props) {
         renderItem={(c, i) => (
           <List.Item>
             <List.Item.Meta
-              avatar={
-                <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
-              }
               title={
                 <>
                   Comment {i}{" "}
