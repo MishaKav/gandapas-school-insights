@@ -30,10 +30,7 @@ export function Insights(props) {
       text: "More than 1000 characters",
       value: filterByLength(1000)
     },
-    {
-      text: "More than 2000 characters",
-      value: filterByLength(2000)
-    },
+
     {
       text: "More than 3000 characters",
       value: filterByLength(3000)
