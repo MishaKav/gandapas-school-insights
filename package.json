@@ -1,6 +1,8 @@
 {
   "name": "react",
-  "version": "0.0.0",
+  "description": "This project was build to find insights (best comments) from all comments.",
+  "author": "Misha Kav <misha.kav@gmail.com>",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "antd": "^4.6.5",

@@ -16,7 +16,7 @@ export default function App() {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    onChangeQuestion(1)
+    onChangeQuestion(1);
   }, []);
 
   const onChangeQuestion = async index => {
@@ -26,7 +26,7 @@ export default function App() {
     try {
       setIsLoading(true);
       const response = await fetch(
-        `https://raw.githubusercontent.com/MishaKav/gandapas-school-insights/master/src/data/lesson_${
+        `https://raw.githubusercontent.com/MishaKav/gandapas-school-insights/data-only/src/data/lesson_${
           currentQuestion.index
         }.json`
       );
