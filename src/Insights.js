@@ -5,7 +5,7 @@ import { maxBy } from "lodash";
 const { Text } = Typography;
 
 export function Insights(props) {
-  const { comments = [] } = props;
+  const { comments = [], isLoading } = props;
 
   const filterByLength = limit => comments.filter(c => c.length > limit).length;
 
@@ -44,6 +44,7 @@ export function Insights(props) {
   return (
     <>
       <List
+        loading={isLoading}
         style={{ width: 300 }}
         size="small"
         bordered

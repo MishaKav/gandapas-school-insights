@@ -89,7 +89,7 @@ export default function App() {
 
         <Row gutter={[20, 20]} justify="space-between">
           <Col>
-            <Insights comments={activeComments} />
+            <Insights isLoading={isLoading} comments={activeComments} />
           </Col>
 
           <Col>
