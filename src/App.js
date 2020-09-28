@@ -11,7 +11,8 @@ const { Option } = Select;
 export default function App() {
   const [activeQuestion, setActiveQuestion] = useState(questions[1]);
   const [activeComments, setActiveComments] = useState([]);
-  const [limit, setLimit] = useState(2000);
+  const [min, setMin] = useState(2000);
+  const [max, setMax] = useState(2500);
   const [skip, setSkip] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -40,7 +41,8 @@ export default function App() {
   };
 
   const commentsToShow = activeComments
-    .filter(c => c.length > limit)
+    .filter(c => c.length >= min)
+    .filter(c => c.length <= max)
     .filter((_, i) => i >= skip);
 
   return (
@@ -67,9 +69,20 @@ export default function App() {
               min={0}
               max={10000}
               step={100}
-              defaultValue={limit}
-              onChange={value => setLimit(value)}
-              placeholder="limit"
+              defaultValue={min}
+              onChange={value => setMin(value)}
+              placeholder="min"
+            />
+          </Col>
+
+          <Col>
+            <InputNumber
+              min={0}
+              max={10000}
+              step={100}
+              defaultValue={max}
+              onChange={value => setMax(value)}
+              placeholder="max"
             />
           </Col>
 
@@ -109,12 +122,22 @@ export default function App() {
           }`}</Col>
 
           <Col span={24}>
-            <Comments isLoading={isLoading} comments={commentsToShow} />
+            <Comments
+              isLoading={isLoading}
+              allComments={activeComments}
+              comments={commentsToShow}
+              activeQuestion={activeQuestion}
+            />
           </Col>
         </Row>
       </Content>
 
-      <Footer>by Misha Kav</Footer>
+      <Footer>
+        by Misha Kav,{" "}
+        <a href="mailto:misha.kav@gmail.com" target="_blank">
+          misha.kav@gmail.com 
+        </a>
+      </Footer>
     </Layout>
   );
 }

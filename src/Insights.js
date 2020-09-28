@@ -1,6 +1,5 @@
 import React from "react";
 import { Typography, List } from "antd";
-import { maxBy } from "lodash";
 
 const { Text } = Typography;
 
@@ -16,7 +15,7 @@ export function Insights(props) {
     },
     {
       text: "Max characters",
-      value: maxBy(comments, "length")?.length
+      value: comments?.sort((a,b) => b.length - a.length)[0]?.length
     },
     {
       text: "More than 200 characters",

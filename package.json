@@ -6,7 +6,6 @@
   "private": true,
   "dependencies": {
     "antd": "^4.6.5",
-    "lodash": "^4.17.20",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
